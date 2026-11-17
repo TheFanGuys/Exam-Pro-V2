@@ -1,0 +1,894 @@
+[
+ {
+  "id": "N-WP-01",
+  "sec": 4,
+  "domain": "Wiring & Protection",
+  "objective": "Apply bundling adjustment and the termination limit together",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "Six current-carrying 10 AWG THHN copper conductors are installed in one EMT run longer than 24 in. Ambient is 30°C and all terminations are rated 75°C. What is the conductors' allowable ampacity?",
+  "choices": [
+   "28 A",
+   "32 A",
+   "35 A",
+   "40 A"
+  ],
+  "answer": "B",
+  "math": [
+   "Start at the 90°C column (THHN): 10 AWG Cu = 40 A",
+   "Adjustment for 4–6 current-carrying conductors = 80%",
+   "40 A × 0.80 = 32 A",
+   "Termination check (75°C column): 10 AWG Cu = 35 A",
+   "Allowable ampacity = the lower of 32 A and 35 A = 32 A"
+  ],
+  "center": [
+   "Derate from the insulation's own temperature column (90°C for THHN), then check that the result does not exceed the termination column (75°C). Here 32 A is below 35 A, so 32 A stands.",
+   "28 A is the trap: it applies the 80% to the 75°C value. 40 A forgets the adjustment. 35 A forgets the adjustment but applies the termination limit."
+  ],
+  "more": [
+   "This answer is the conductor's ampacity, not its breaker size. 240.4(D)(7) still caps 10 AWG copper at 30 A — see the next question."
+  ],
+  "ref": "Table 310.16; Table 310.15(C)(1); 110.14(C); 310.15(C)(1) (2020 and 2023).",
+  "navTip": "Tab Table 310.16 and the adjustment table, Table 310.15(C)(1), so you can flip between them quickly.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-WP-02",
+  "sec": 4,
+  "domain": "Wiring & Protection",
+  "objective": "Apply the small-conductor rule after derating",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "The 10 AWG copper conductors in the previous question have an adjusted ampacity of 32 A. What is the largest standard overcurrent device permitted to protect them (no special exceptions apply)?",
+  "choices": [
+   "25 A",
+   "30 A",
+   "35 A",
+   "40 A"
+  ],
+  "answer": "B",
+  "math": [
+   "Adjusted ampacity = 32 A",
+   "240.4(B) 'next size up' would allow 35 A",
+   "But 240.4(D)(7): 10 AWG copper max = 30 A",
+   "Maximum OCPD = 30 A"
+  ],
+  "center": [
+   "240.4(D) overrides the 'next size up' rule for 14, 12 and 10 AWG. Even though 32 A would normally round up to 35 A, 10 AWG copper is capped at 30 A."
+  ],
+  "ref": "240.4(B); 240.4(D)(7); 240.6(A).",
+  "navTip": "240.4(D) sits right after the 'next size up' rule in 240.4(B) — read them as a pair.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-WP-03",
+  "sec": 4,
+  "domain": "Wiring & Protection",
+  "objective": "Apply ambient temperature correction",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "Three current-carrying 6 AWG THWN-2 copper conductors run in conduit where the ambient temperature is 40°C (104°F). Using the 90°C column, what is the corrected ampacity?",
+  "choices": [
+   "57 A",
+   "65 A",
+   "68 A",
+   "75 A"
+  ],
+  "answer": "C",
+  "math": [
+   "90°C column: 6 AWG Cu = 75 A",
+   "Correction factor, 36–40°C, 90°C column = 0.91",
+   "75 A × 0.91 = 68.25 A ≈ 68 A"
+  ],
+  "center": [
+   "Three conductors means no bundling adjustment (that starts at four). Only the ambient correction applies.",
+   "57 A uses the 75°C column and its 0.88 factor; 65 A is the uncorrected 75°C value; 75 A ignores the heat."
+  ],
+  "more": [
+   "With 75°C terminations the circuit would still be limited to 65 A (110.14(C)), because 68 A is above the 75°C column value."
+  ],
+  "ref": "Table 310.16; ambient correction table — NEC 2020 Table 310.15(B)(1); NEC 2023 Table 310.15(B)(1)(1).",
+  "navTip": "In the 2023 book the 30°C-based correction table is labeled 310.15(B)(1)(1); a second table based on 40°C follows it. Use the one that matches the ampacity table you are reading.",
+  "status": "Verified (2023 table label: confirm on your page)"
+ },
+ {
+  "id": "N-WP-04",
+  "sec": 4,
+  "domain": "Wiring & Protection",
+  "objective": "Size feeder overcurrent protection for mixed loads",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "A feeder supplies 100 A of continuous load and 40 A of noncontinuous load. What is the minimum standard rating of the feeder overcurrent device?",
+  "choices": [
+   "140 A",
+   "150 A",
+   "175 A",
+   "200 A"
+  ],
+  "answer": "C",
+  "math": [
+   "Continuous × 125%: 100 A × 1.25 = 125 A",
+   "Noncontinuous × 100%: 40 A",
+   "Minimum rating = 125 + 40 = 165 A",
+   "Next standard size (240.6(A)) = 175 A"
+  ],
+  "center": [
+   "Only the continuous part gets the 125%. 140 A forgets the factor entirely; 150 A is below the 165 A minimum."
+  ],
+  "ref": "215.3; 215.2(A)(1); 240.6(A).",
+  "navTip": "Feeders are Article 215 — the 125% continuous rule is in 215.2 (conductors) and 215.3 (overcurrent device).",
+  "status": "Verified"
+ },
+ {
+  "id": "N-WP-05",
+  "sec": 4,
+  "domain": "Wiring & Protection",
+  "objective": "Size an equipment grounding conductor",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Easy",
+  "type": "Code lookup",
+  "stem": "A feeder is protected by a 200-A circuit breaker. What is the minimum size copper equipment grounding conductor?",
+  "choices": [
+   "8 AWG",
+   "6 AWG",
+   "4 AWG",
+   "3 AWG"
+  ],
+  "answer": "B",
+  "center": [
+   "Table 250.122 is read by the rating of the overcurrent device ahead of the conductor: 200 A → 6 AWG copper (4 AWG aluminum)."
+  ],
+  "more": [
+   "If the ungrounded conductors were upsized for voltage drop, 250.122(B) would require the EGC to be increased proportionally."
+  ],
+  "ref": "Table 250.122.",
+  "navTip": "Two grounding tables trip people: 250.122 = EGC (by breaker size); 250.66 = GEC (by service conductor size). Tab them in different colors.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-WP-06",
+  "sec": 4,
+  "domain": "Wiring & Protection",
+  "objective": "Size a grounding electrode conductor",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Easy",
+  "type": "Code lookup",
+  "stem": "A service uses 3/0 AWG copper service-entrance conductors. What is the minimum size copper grounding electrode conductor to a metal underground water pipe electrode?",
+  "choices": [
+   "6 AWG",
+   "4 AWG",
+   "2 AWG",
+   "1/0 AWG"
+  ],
+  "answer": "B",
+  "center": [
+   "Table 250.66: 2/0 or 3/0 copper service conductors → 4 AWG copper GEC.",
+   "6 AWG is the cap only for the portion going to rod, pipe, or plate electrodes (250.66(A)). A water pipe electrode doesn't get that reduction."
+  ],
+  "ref": "Table 250.66; 250.66(A).",
+  "navTip": "Read Table 250.66 by the largest ungrounded service conductor (or equivalent area for parallel sets).",
+  "status": "Verified"
+ },
+ {
+  "id": "N-WP-07",
+  "sec": 4,
+  "domain": "Wiring & Protection",
+  "objective": "Size a main bonding jumper",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Code lookup",
+  "stem": "A service has a single set of 500 kcmil copper ungrounded conductors. What is the minimum size copper main bonding jumper?",
+  "choices": [
+   "2 AWG",
+   "1/0 AWG",
+   "2/0 AWG",
+   "3/0 AWG"
+  ],
+  "answer": "B",
+  "center": [
+   "250.28(D) sends you to Table 250.102(C)(1). Over 350 through 600 kcmil copper → 1/0 AWG copper.",
+   "Above 1100 kcmil copper, the jumper must be at least 12.5% of the area of the largest ungrounded conductor instead of using the table rows."
+  ],
+  "ref": "250.28(D)(1); Table 250.102(C)(1).",
+  "navTip": "Main bonding jumper, system bonding jumper, supply-side bonding jumper and the minimum service neutral all use Table 250.102(C)(1).",
+  "status": "Verified"
+ },
+ {
+  "id": "N-WP-08",
+  "sec": 4,
+  "domain": "Wiring & Protection",
+  "objective": "Apply the dwelling general lighting load and demand factors",
+  "edition": "NEC 2020 or 2023 — 2020: 220.12 and Table 220.42; 2023: 220.41 and Table 220.45",
+  "difficulty": "Hard",
+  "type": "Calculation",
+  "stem": "A 2,000 sq ft dwelling has the general lighting load plus the two required small-appliance circuits and one laundry circuit. After applying the lighting demand factors, what is the demand load for these items?",
+  "choices": [
+   "3,675 VA",
+   "5,625 VA",
+   "6,000 VA",
+   "10,500 VA"
+  ],
+  "answer": "B",
+  "math": [
+   "General lighting: 2,000 sq ft × 3 VA = 6,000 VA",
+   "Small-appliance: 2 × 1,500 VA = 3,000 VA",
+   "Laundry: 1 × 1,500 VA = 1,500 VA",
+   "Total before demand = 10,500 VA",
+   "First 3,000 VA at 100% = 3,000 VA",
+   "Remaining 7,500 VA at 35% = 2,625 VA",
+   "Demand load = 3,000 + 2,625 = 5,625 VA"
+  ],
+  "center": [
+   "Small-appliance and laundry loads are added to the lighting load BEFORE the demand factors are applied (220.52).",
+   "3,675 VA applies 35% to everything; 10,500 VA skips the demand step; 6,000 VA counts only the lighting."
+  ],
+  "more": [
+   "Edition map: 2020 puts the 3 VA/sq ft in Table 220.12 and the demand factors in Table 220.42. The 2023 NEC moved them to 220.41 and Table 220.45. Same numbers, different pages — tab whichever book you bring."
+  ],
+  "ref": "220.52(A),(B); NEC 2020 Table 220.12 and Table 220.42; NEC 2023 220.41 and Table 220.45.",
+  "navTip": "In a 2023 book, dwelling feeder/service calcs start at Part III (220.40). Don't hunt for the 3 VA in Table 220.12 — in 2023 that table is non-dwelling only (now 220.42).",
+  "status": "Verified"
+ },
+ {
+  "id": "N-WP-09",
+  "sec": 4,
+  "domain": "Wiring & Protection",
+  "objective": "Apply Table 220.55 Note 1 for a range over 12 kW",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Hard",
+  "type": "Calculation",
+  "stem": "What is the demand load for one 14-kW household range, using Table 220.55 Column C and its notes?",
+  "choices": [
+   "8.0 kW",
+   "8.8 kW",
+   "11.2 kW",
+   "14.0 kW"
+  ],
+  "answer": "B",
+  "math": [
+   "Column C, 1 appliance = 8 kW (for ranges up to 12 kW)",
+   "Amount over 12 kW: 14 − 12 = 2 kW",
+   "Note 1: increase 5% per kW over 12 → 2 × 5% = 10%",
+   "8 kW × 1.10 = 8.8 kW"
+  ],
+  "center": [
+   "Column C assumes ranges of 12 kW or less. Note 1 bumps the Column C value 5% for each kW (or major fraction) over 12 kW."
+  ],
+  "ref": "Table 220.55, Column C and Note 1.",
+  "navTip": "The table notes are where the real rules live. Highlight Note 1 the same color as Column C.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-WP-10",
+  "sec": 4,
+  "domain": "Wiring & Protection",
+  "objective": "Recall the optional dwelling calculation percentages",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Code lookup",
+  "stem": "Under the optional dwelling calculation in 220.82(B), the first 10 kVA of 'general load' is taken at 100%. The remainder is taken at:",
+  "choices": [
+   "25%",
+   "35%",
+   "40%",
+   "50%"
+  ],
+  "answer": "C",
+  "center": [
+   "220.82(B): first 10 kVA at 100%, remainder at 40%. Heating and air-conditioning are added separately under 220.82(C).",
+   "35% is the standard-method lighting demand factor — a different table."
+  ],
+  "ref": "220.82(B) and (C).",
+  "navTip": "Optional method is Part IV of Article 220 (220.82). Tab it separately from the standard method.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-WP-11",
+  "sec": 4,
+  "domain": "Wiring & Protection",
+  "objective": "Size one-family dwelling service conductors with the 83% rule",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "A 200-A service supplies the entire load of a one-family dwelling. Using the 83% rule of 310.12 and the 75°C column, what is the minimum copper service conductor?",
+  "choices": [
+   "1/0 AWG",
+   "2/0 AWG",
+   "3/0 AWG",
+   "4/0 AWG"
+  ],
+  "answer": "B",
+  "math": [
+   "200 A × 0.83 = 166 A",
+   "Table 310.16, 75°C copper: 1/0 = 150 A (too small), 2/0 = 175 A",
+   "Minimum = 2/0 AWG copper"
+  ],
+  "center": [
+   "310.12 lets 100–400 A one-family dwelling service conductors carry only 83% of the service rating. 3/0 AWG is what you'd get at 100% (200 A in the 75°C column)."
+  ],
+  "ref": "310.12(A); Table 310.16.",
+  "navTip": "310.12 applies only to dwelling services and main feeders that carry the entire load. Don't use it for subpanels that serve part of the load.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-EQ-01",
+  "sec": 6,
+  "domain": "Equipment for General Use",
+  "objective": "Size motor branch-circuit conductors from the table FLC",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "A 25-hp, 460-V, three-phase squirrel-cage motor (continuous duty) has a nameplate FLA of 32 A. What is the minimum copper branch-circuit conductor, using the 75°C column?",
+  "choices": [
+   "10 AWG",
+   "8 AWG",
+   "6 AWG",
+   "4 AWG"
+  ],
+  "answer": "B",
+  "math": [
+   "Table 430.250: 25 hp, 460 V = 34 A (use the table, not the nameplate)",
+   "430.22: 34 A × 1.25 = 42.5 A",
+   "Table 310.16, 75°C Cu: 10 AWG = 35 A (too small), 8 AWG = 50 A",
+   "Minimum = 8 AWG copper"
+  ],
+  "center": [
+   "Conductor sizing uses the table FLC (430.6(A)(1)). The 32 A nameplate value is a distractor for this step."
+  ],
+  "ref": "430.6(A)(1); Table 430.250; 430.22; Table 310.16.",
+  "navTip": "Motor tables are at the back of Article 430: 430.247 (DC), 430.248 (1-phase), 430.250 (3-phase).",
+  "status": "Verified"
+ },
+ {
+  "id": "N-EQ-02",
+  "sec": 6,
+  "domain": "Equipment for General Use",
+  "objective": "Size motor short-circuit/ground-fault protection",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Hard",
+  "type": "Calculation",
+  "stem": "For the same 25-hp, 460-V motor (table FLC 34 A), what is the maximum inverse-time circuit breaker rating permitted, using the next-higher-size allowance?",
+  "choices": [
+   "80 A",
+   "85 A",
+   "90 A",
+   "100 A"
+  ],
+  "answer": "C",
+  "math": [
+   "Table 430.52: inverse-time breaker = 250% of FLC",
+   "34 A × 2.50 = 85 A",
+   "85 A is not a standard size (240.6(A))",
+   "430.52(C)(1) Exception No. 1: next higher standard size = 90 A"
+  ],
+  "center": [
+   "85 A is the calculated value, but it isn't a standard rating — the exception lets you go to the next standard size up, 90 A. 100 A would require Exception No. 2 (motor won't start)."
+  ],
+  "ref": "430.52(C)(1) and Exception No. 1; Table 430.52; 240.6(A).",
+  "navTip": "Table 430.52 is organized by motor type down the side and device type across the top — find the column before the row.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-EQ-03",
+  "sec": 6,
+  "domain": "Equipment for General Use",
+  "objective": "Size motor overload protection from the nameplate",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "The same motor's nameplate shows FLA 32 A and a service factor of 1.15. What is the maximum rating of a separate overload device under the basic rule?",
+  "choices": [
+   "36.8 A",
+   "40 A",
+   "42.5 A",
+   "44.8 A"
+  ],
+  "answer": "B",
+  "math": [
+   "430.32(A)(1): service factor 1.15 or more → 125% of nameplate FLA",
+   "32 A × 1.25 = 40 A"
+  ],
+  "center": [
+   "Overloads use the NAMEPLATE current. 42.5 A is 125% of the table value (wrong current). 36.8 A uses 115% (that's for motors without the 1.15 service factor or 40°C rise marking)."
+  ],
+  "ref": "430.32(A)(1).",
+  "navTip": "Three motor numbers, three places: conductors 430.22 (table), OCPD 430.52 (table), overloads 430.32 (nameplate).",
+  "status": "Verified"
+ },
+ {
+  "id": "N-EQ-04",
+  "sec": 6,
+  "domain": "Equipment for General Use",
+  "objective": "Size conductors for several motors",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "A feeder supplies two 460-V, three-phase motors with table FLCs of 34 A and 21 A, and no other loads. What is the minimum feeder conductor ampacity?",
+  "choices": [
+   "55.0 A",
+   "63.5 A",
+   "68.8 A",
+   "76.5 A"
+  ],
+  "answer": "B",
+  "math": [
+   "430.24: 125% of the largest motor + 100% of the others",
+   "34 A × 1.25 = 42.5 A",
+   "42.5 A + 21 A = 63.5 A"
+  ],
+  "center": [
+   "Only the largest motor gets the 125%. 68.8 A multiplies both motors by 125%; 55 A adds them at 100%."
+  ],
+  "ref": "430.24; Table 430.250.",
+  "navTip": "430.24 is the 'several motors' rule; 430.62 is the matching rule for the feeder's overcurrent device.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-EQ-05",
+  "sec": 6,
+  "domain": "Equipment for General Use",
+  "objective": "Calculate three-phase transformer current",
+  "edition": "Theory (Ugly's) + NEC",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "A 75-kVA, three-phase transformer has a 480-V primary. What is the rated primary current?",
+  "choices": [
+   "52.1 A",
+   "90.2 A",
+   "156.3 A",
+   "208.2 A"
+  ],
+  "answer": "B",
+  "math": [
+   "I = VA ÷ (E × 1.732)",
+   "I = 75,000 ÷ (480 × 1.732)",
+   "I = 75,000 ÷ 831.4 = 90.2 A"
+  ],
+  "center": [
+   "156.3 A forgets the 1.732 (single-phase formula). 208.2 A is the 208-V secondary current. 52.1 A divides by 1.732 twice."
+  ],
+  "ref": "Ugly's — three-phase formulas; used with Table 450.3(B).",
+  "navTip": "Tab the Ugly's three-phase formula page. Don't write formulas on tabs — the test center allows highlighting, underlining and permanent tabs only.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-EQ-06",
+  "sec": 6,
+  "domain": "Equipment for General Use",
+  "objective": "Size transformer primary-only overcurrent protection",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Hard",
+  "type": "Calculation",
+  "stem": "That 75-kVA, 480-V transformer (primary current 90.2 A) is protected on the primary only. What is the maximum standard primary overcurrent device permitted under Table 450.3(B)?",
+  "choices": [
+   "100 A",
+   "110 A",
+   "125 A",
+   "225 A"
+  ],
+  "answer": "C",
+  "math": [
+   "Primary-only protection, primary current 9 A or more → 125%",
+   "90.2 A × 1.25 = 112.8 A",
+   "Note 1: where 125% does not match a standard size, the next higher standard size is permitted",
+   "240.6(A): next size above 112.8 A = 125 A"
+  ],
+  "center": [
+   "110 A rounds down. 225 A is the 250% figure used when secondary protection is also provided."
+  ],
+  "ref": "450.3(B) and Table 450.3(B), Note 1; 240.6(A).",
+  "navTip": "Table 450.3(A) is over 1000 V; 450.3(B) is 1000 V and less. Most exam questions are 450.3(B).",
+  "status": "Verified"
+ },
+ {
+  "id": "N-EQ-07",
+  "sec": 6,
+  "domain": "Equipment for General Use",
+  "objective": "Size generator output conductors",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Code lookup",
+  "stem": "The conductors from a generator's output terminals to the first distribution device containing overcurrent protection must have an ampacity of not less than what percentage of the generator's nameplate current rating?",
+  "choices": [
+   "100%",
+   "115%",
+   "125%",
+   "150%"
+  ],
+  "answer": "B",
+  "center": [
+   "445.13(A): 115% of the nameplate current rating. 125% is the continuous-load factor people reach for out of habit."
+  ],
+  "ref": "445.13(A).",
+  "navTip": "Generators are Article 445 — short article, worth one tab.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-EQ-08",
+  "sec": 6,
+  "domain": "Equipment for General Use",
+  "objective": "Apply nameplate maximum overcurrent rating for HVAC equipment",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Easy",
+  "type": "Concept",
+  "stem": "A rooftop air-conditioning unit's nameplate lists 'MAX FUSE/BREAKER 40 A'. The installer wants a 45-A breaker because it's in stock. This is:",
+  "choices": [
+   "Permitted if the conductors are rated 45 A",
+   "Permitted if the unit is outdoors",
+   "Not permitted — the marked maximum overcurrent rating may not be exceeded",
+   "Permitted if the unit has a service disconnect"
+  ],
+  "answer": "C",
+  "center": [
+   "440.22(C) and 110.3(B): where the equipment is marked with a maximum fuse or breaker size, the protective device may not exceed that marking."
+  ],
+  "ref": "440.22(C); 110.3(B).",
+  "navTip": "In Article 440, sizing starts at 440.6 (RLA/BCSC); overcurrent device limits are 440.22.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-SP-01",
+  "sec": 7,
+  "domain": "Special Equipment",
+  "objective": "Size EVSE overcurrent protection",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "An electric vehicle supply equipment (EVSE) unit has a maximum load of 48 A. What is the minimum standard overcurrent device rating for its branch circuit?",
+  "choices": [
+   "48 A",
+   "50 A",
+   "60 A",
+   "70 A"
+  ],
+  "answer": "C",
+  "math": [
+   "625.41: OCPD sized for continuous duty, not less than 125% of the maximum EVSE load",
+   "48 A × 1.25 = 60 A",
+   "60 A is a standard size"
+  ],
+  "center": [
+   "EV charging is treated as continuous. 50 A would be undersized (only 104%)."
+  ],
+  "ref": "625.41; 625.40 (individual branch circuit).",
+  "navTip": "EV charging = Article 625. Remember '6-2-5 = 1-2-5%'.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-SP-02",
+  "sec": 7,
+  "domain": "Special Equipment",
+  "objective": "Calculate PV maximum circuit current",
+  "edition": "NEC 2020 690.8(A)(1); NEC 2023 690.8(A)(1)(a)",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "A PV source circuit has a module short-circuit current (Isc) of 10 A. Using the 125% method, what is the circuit's maximum current?",
+  "choices": [
+   "10.0 A",
+   "12.5 A",
+   "15.6 A",
+   "20.0 A"
+  ],
+  "answer": "B",
+  "math": [
+   "Maximum current = Isc × 125%",
+   "10 A × 1.25 = 12.5 A"
+  ],
+  "center": [
+   "15.6 A (Isc × 1.56) is the conductor ampacity / OCPD sizing figure — that's 125% applied twice (690.8(B) adds another 125% for continuous duty)."
+  ],
+  "ref": "690.8(A)(1) (2023: 690.8(A)(1)(a)); 690.8(B).",
+  "navTip": "PV is Article 690; the two 125% steps are (A) maximum current, then (B) conductor/OCPD sizing.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-SP-03",
+  "sec": 7,
+  "domain": "Special Conditions",
+  "objective": "Wiring separation for emergency systems",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Code lookup",
+  "stem": "Wiring from an emergency source to emergency loads must generally be:",
+  "choices": [
+   "Kept entirely independent of all other wiring and equipment, except as permitted",
+   "Run in the same raceway as normal power for redundancy",
+   "Installed only in PVC",
+   "Protected by AFCI breakers"
+  ],
+  "answer": "A",
+  "center": [
+   "700.10(B): emergency circuit wiring is kept entirely independent of all other wiring. The listed exceptions (transfer equipment enclosures, exit signs with two sources, etc.) are narrow."
+  ],
+  "ref": "700.10(B).",
+  "navTip": "Article 700 (emergency) vs 701 (legally required) vs 702 (optional): the separation rule is strict only in 700.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-SP-04",
+  "sec": 7,
+  "domain": "Special Conditions",
+  "objective": "Separate Class 2 circuits from power",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Code lookup",
+  "stem": "A Class 2 thermostat cable is to be pulled into a raceway that contains 120-V power conductors. In general, this is:",
+  "choices": [
+   "Permitted if the Class 2 cable is rated 300 V",
+   "Not permitted unless separated by a barrier or another specific allowance applies",
+   "Permitted in dwellings only",
+   "Permitted if the raceway is metal"
+  ],
+  "answer": "B",
+  "center": [
+   "725.136(A): Class 2 and Class 3 circuits are not placed in the same raceway, cable, or enclosure with power conductors except as specifically permitted (barriers, segregation in enclosures, etc.). Insulation rating alone doesn't make it legal."
+  ],
+  "ref": "725.136(A) (2020 and 2023).",
+  "navTip": "In the 2023 NEC, Article 725 was split: general rules are in 722, Class 1 moved to 724, Class 2/3 stayed in 725.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-SP-05",
+  "sec": 7,
+  "domain": "Special Occupancies",
+  "objective": "Locate a conduit seal in Class I, Division 1",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Code lookup",
+  "stem": "In a Class I, Division 1 location, a conduit seal is required for a conduit entering an enclosure that contains arcing devices. The seal must be installed within what distance of the enclosure?",
+  "choices": [
+   "6 in.",
+   "12 in.",
+   "18 in.",
+   "36 in."
+  ],
+  "answer": "C",
+  "center": [
+   "501.15(A)(1): seals within 450 mm (18 in.) of the enclosure, and only listed fittings (unions, couplings, etc.) between the seal and the enclosure."
+  ],
+  "ref": "501.15(A)(1).",
+  "navTip": "Article 501 = Class I wiring. .10 = wiring methods, .15 = sealing.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-SP-06",
+  "sec": 7,
+  "domain": "Special Occupancies",
+  "objective": "Locate the classified area in a major repair garage",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Easy",
+  "type": "Code lookup",
+  "stem": "In a major repair garage where vehicles using gasoline are repaired (ventilation not used to reduce the area), the floor area is generally classified Class I, Division 2 up to what height above the floor?",
+  "choices": [
+   "6 in.",
+   "18 in.",
+   "3 ft",
+   "8 ft"
+  ],
+  "answer": "B",
+  "center": [
+   "Gasoline vapor is heavier than air, so the classified area is measured up from the floor: 450 mm (18 in.)."
+  ],
+  "ref": "511.3(C) (major repair garages; check the exact subdivision in your edition).",
+  "navTip": "Article 511 = repair garages; 514 = fuel dispensing. Both measure the 18-in. zone from the floor.",
+  "status": "Verified (subdivision label: confirm on your page)"
+ },
+ {
+  "id": "N-SP-07",
+  "sec": 7,
+  "domain": "Special Equipment",
+  "objective": "Locate the required pool-area receptacle",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Code lookup",
+  "stem": "At a dwelling with a permanently installed pool, at least one 125-V, 15- or 20-A receptacle on a general-purpose branch circuit must be located not less than 6 ft and not more than how far from the inside wall of the pool?",
+  "choices": [
+   "10 ft",
+   "15 ft",
+   "20 ft",
+   "25 ft"
+  ],
+  "answer": "C",
+  "center": [
+   "680.22(A)(3): not less than 1.83 m (6 ft) and not more than 6.0 m (20 ft) from the inside wall, and not more than 2.0 m (6 ft 6 in.) above the floor or grade."
+  ],
+  "ref": "680.22(A)(3).",
+  "navTip": "680.22 = area lighting, receptacles and equipment around pools. Highlight the three distances in (A).",
+  "status": "Verified"
+ },
+ {
+  "id": "N-WM-01",
+  "sec": 5,
+  "domain": "Wiring Methods & Materials",
+  "objective": "Calculate conduit fill with mixed conductor sizes",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Hard",
+  "type": "Calculation",
+  "stem": "Three 6 AWG THHN and one 10 AWG THHN copper conductors will be installed in EMT. What is the smallest trade size permitted?",
+  "choices": [
+   "1/2 in.",
+   "3/4 in.",
+   "1 in.",
+   "1-1/4 in."
+  ],
+  "answer": "B",
+  "math": [
+   "Chapter 9, Table 5 (THHN): 6 AWG = 0.0507 in², 10 AWG = 0.0211 in²",
+   "Total = (3 × 0.0507) + 0.0211 = 0.1732 in²",
+   "Four conductors → 40% column of Table 4 (EMT)",
+   "1/2 in. EMT, 40% = 0.122 in² (too small)",
+   "3/4 in. EMT, 40% = 0.213 in² (OK)"
+  ],
+  "center": [
+   "Mixed sizes mean you can't use Annex C — add up the conductor areas from Table 5 and compare to the 40% column for EMT in Table 4."
+  ],
+  "ref": "Chapter 9, Tables 1, 4 and 5.",
+  "navTip": "Table 4 is grouped by raceway type; find the EMT block first, then the 40% column.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-WM-02",
+  "sec": 5,
+  "domain": "Wiring Methods & Materials",
+  "objective": "Calculate box fill",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "A 4 in. × 1-1/2 in. square box with internal cable clamps contains one receptacle and two 12/2 NM cables with grounds (four insulated 12 AWG conductors and two bare grounds). What volume is required?",
+  "choices": [
+   "15.75 cu in.",
+   "18.00 cu in.",
+   "20.25 cu in.",
+   "22.50 cu in."
+  ],
+  "answer": "B",
+  "math": [
+   "Insulated conductors: 4 × 1 = 4",
+   "All equipment grounding conductors together: 1",
+   "Internal cable clamps (all): 1",
+   "Receptacle on one yoke: 2",
+   "Total = 8 × 2.25 cu in. (12 AWG) = 18.00 cu in."
+  ],
+  "center": [
+   "A 4 × 1-1/2 square box is 21.0 cu in. (Table 314.16(A)), so this fits. 20.25 counts each ground separately; 15.75 forgets the clamps; 22.50 counts each clamp separately."
+  ],
+  "ref": "314.16(B); Table 314.16(A); Table 314.16(B).",
+  "navTip": "314.16(B)(1)–(5) is the counting rulebook. Tab it, and tab Table 314.16(A) for box volumes.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-WM-03",
+  "sec": 5,
+  "domain": "Wiring Methods & Materials",
+  "objective": "Size a pull box for an angle pull",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "An angle pull has two 3-in. conduits and one 2-in. conduit entering the same wall of a pull box. What is the minimum distance from that wall to the opposite wall?",
+  "choices": [
+   "18 in.",
+   "20 in.",
+   "23 in.",
+   "24 in."
+  ],
+  "answer": "C",
+  "math": [
+   "314.28(A)(2): 6 × largest raceway + sum of the other raceways in the same row on the same wall",
+   "6 × 3 in. = 18 in.",
+   "Others: 3 in. + 2 in. = 5 in.",
+   "18 + 5 = 23 in."
+  ],
+  "center": [
+   "18 in. forgets the other raceways. 24 in. is the straight-pull rule (8 × 3 in.)."
+  ],
+  "ref": "314.28(A)(2).",
+  "navTip": "Straight pull = 8 ×; angle or U pull = 6 × + others. Both are 314.28(A).",
+  "status": "Verified"
+ },
+ {
+  "id": "N-WM-04",
+  "sec": 5,
+  "domain": "Wiring Methods & Materials",
+  "objective": "Identify underground service conductors",
+  "edition": "NEC 2020 or 2023 (same rule; numbering noted where it differs)",
+  "difficulty": "Easy",
+  "type": "Code lookup",
+  "stem": "Underground service conductors that are not encased in concrete and are buried 18 in. or more below grade must have a warning ribbon placed in the trench at least how far above the installation?",
+  "choices": [
+   "6 in.",
+   "12 in.",
+   "18 in.",
+   "24 in."
+  ],
+  "answer": "B",
+  "center": [
+   "300.5(D)(3): warning ribbon at least 300 mm (12 in.) above the underground installation."
+  ],
+  "ref": "300.5(D)(3).",
+  "navTip": "300.5 is the whole underground rule set: (A) cover table, (D) protection from damage, (G) sealing.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-TH-01",
+  "sec": 2,
+  "domain": "Electrical Theory & Principles",
+  "objective": "Calculate single-phase voltage drop with the K formula",
+  "edition": "Ugly's / NEC Chapter 9 Table 8",
+  "difficulty": "Medium",
+  "type": "Calculation",
+  "stem": "A 120-V, 16-A load is 150 ft (one way) from the panel on 12 AWG copper (6,530 cmil). Using K = 12.9, what is the approximate voltage drop?",
+  "choices": [
+   "3.6 V",
+   "4.7 V",
+   "9.5 V",
+   "19.0 V"
+  ],
+  "answer": "C",
+  "math": [
+   "VD = (2 × K × I × L) ÷ cmil",
+   "VD = (2 × 12.9 × 16 × 150) ÷ 6,530",
+   "VD = 61,920 ÷ 6,530 = 9.48 V ≈ 9.5 V",
+   "9.5 V ÷ 120 V ≈ 7.9% — well over the 3% branch-circuit recommendation"
+  ],
+  "center": [
+   "4.7 V forgets the 2 (single-phase has two conductors in the loop). For three-phase the 2 becomes 1.732."
+  ],
+  "ref": "Ugly's voltage drop formula; Chapter 9, Table 8 (circular mils); 210.19(A) Informational Note (recommendation).",
+  "navTip": "Chapter 9 Table 8 gives cmil for each size — tab it next to your Ugly's voltage-drop page.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-SF-01",
+  "sec": 1,
+  "domain": "Safety",
+  "objective": "Absence-of-voltage testing location (70E 2024)",
+  "edition": "NFPA 70E 2024",
+  "difficulty": "Medium",
+  "type": "Concept",
+  "stem": "Under NFPA 70E (2024) 120.6, where must the absence of voltage be tested?",
+  "choices": [
+   "At the upstream disconnect only",
+   "At each phase conductor or circuit part at each point of work",
+   "At the service equipment",
+   "Anywhere on the circuit, if the tester is verified first"
+  ],
+  "answer": "B",
+  "center": [
+   "The 2024 edition added 'at each point of work' — testing upstream or at the panel doesn't prove the parts you will touch are dead. The tester is verified on a known source before and after the test."
+  ],
+  "ref": "NFPA 70E 2024, 120.6(7).",
+  "navTip": "In the 2024 book the step list moved from 120.5 to 120.6. Re-tab it if your tabs came from a 2021 class.",
+  "status": "Verified"
+ },
+ {
+  "id": "N-PD-01",
+  "sec": 0,
+  "domain": "Project Documents",
+  "objective": "Use a drawing scale",
+  "edition": "Plan reading (blueprint packet)",
+  "difficulty": "Easy",
+  "type": "Calculation",
+  "stem": "An electrical plan is drawn at 1/8 in. = 1 ft. A feeder run measures 6-1/2 in. on the drawing. What is the actual length?",
+  "choices": [
+   "26 ft",
+   "48 ft",
+   "52 ft",
+   "65 ft"
+  ],
+  "answer": "C",
+  "math": [
+   "At 1/8 in. = 1 ft, every 1 in. on the drawing = 8 ft",
+   "6.5 in. × 8 ft/in. = 52 ft"
+  ],
+  "center": [
+   "26 ft uses 1/4 in. = 1 ft. Read the scale printed on the sheet, not the one on the cover page — sheets can differ."
+  ],
+  "ref": "Physical blueprint packet (handed out at the test center); general plan-reading practice.",
+  "navTip": "On test day, check the title block of each sheet for its scale before measuring.",
+  "status": "Verified"
+ }
+]

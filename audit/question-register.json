@@ -1,0 +1,378 @@
+[
+ {
+  "id": "P-S3-41",
+  "severity": "High",
+  "problem": "Worked math ends with '→ Answer X' naming the wrong letter (key and math disagree).",
+  "fix": "Removed the letter from the math; explanations no longer depend on answer position.",
+  "source": "Internal consistency (key vs. explanation)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S3-42",
+  "severity": "High",
+  "problem": "Worked math ends with '→ Answer X' naming the wrong letter (key and math disagree).",
+  "fix": "Removed the letter from the math; explanations no longer depend on answer position.",
+  "source": "Internal consistency (key vs. explanation)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S3-43",
+  "severity": "High",
+  "problem": "Worked math ends with '→ Answer X' naming the wrong letter (key and math disagree).",
+  "fix": "Removed the letter from the math; explanations no longer depend on answer position.",
+  "source": "Internal consistency (key vs. explanation)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S3-44",
+  "severity": "High",
+  "problem": "Worked math ends with '→ Answer X' naming the wrong letter (key and math disagree).",
+  "fix": "Removed the letter from the math; explanations no longer depend on answer position.",
+  "source": "Internal consistency (key vs. explanation)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S5-104",
+  "severity": "High",
+  "problem": "Worked math ends with '→ Answer X' naming the wrong letter (key and math disagree).",
+  "fix": "Removed the letter from the math; explanations no longer depend on answer position.",
+  "source": "Internal consistency (key vs. explanation)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S5-112",
+  "severity": "High",
+  "problem": "Worked math ends with '→ Answer X' naming the wrong letter (key and math disagree).",
+  "fix": "Removed the letter from the math; explanations no longer depend on answer position.",
+  "source": "Internal consistency (key vs. explanation)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S6-142",
+  "severity": "High",
+  "problem": "Worked math ends with '→ Answer X' naming the wrong letter (key and math disagree).",
+  "fix": "Removed the letter from the math; explanations no longer depend on answer position.",
+  "source": "Internal consistency (key vs. explanation)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S7-179",
+  "severity": "High",
+  "problem": "Worked math ends with '→ Answer X' naming the wrong letter (key and math disagree).",
+  "fix": "Removed the letter from the math; explanations no longer depend on answer position.",
+  "source": "Internal consistency (key vs. explanation)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S4-74",
+  "severity": "High",
+  "problem": "Explanation says 'answer B' but 30 in. is choice D.",
+  "fix": "Letter removed from explanation.",
+  "source": "Internal consistency",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S1-6",
+  "severity": "Medium",
+  "problem": "Explanation labels direct labor/materials as (A, B); they are A and C (B is the correct answer).",
+  "fix": "Letter tags removed.",
+  "source": "Internal consistency",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S6-146",
+  "severity": "High",
+  "problem": "Explanation calls choice A 'too restrictive' while A is the keyed answer.",
+  "fix": "Explanation rewritten.",
+  "source": "NEC 358.10 / 358.12",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S2-25",
+  "severity": "High",
+  "problem": "Keyed answer quotes NEC 590.6(A)(1) wording (125 V; 15, 20, 30 A) but the question and reference are OSHA 1926.404(b)(1)(ii), which covers 120-volt, single-phase, 15- and 20-ampere receptacles.",
+  "fix": "Keyed choice and explanation changed to the OSHA wording; NEC difference explained.",
+  "source": "29 CFR 1926.404(b)(1)(ii); NEC 590.6(A)(1)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S6-163",
+  "severity": "High",
+  "problem": "Keyed answer invents an exception ('part of an approved nonmetallic wiring method that doesn't require it'); 314.4 has no such exception.",
+  "fix": "Rewritten as a direct 314.4 lookup.",
+  "source": "NEC 314.4; 250 Part IV",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S7-193",
+  "severity": "High",
+  "problem": "Ignores 210.23(A)(1): a cord-and-plug load on a multi-outlet 15-A circuit is limited to 12 A (80%), so 13.5 A is not permitted even when non-continuous. Question did not say individual branch circuit or hard-wired.",
+  "fix": "Stem now states a hard-wired appliance on an individual branch circuit; explanation covers the 80% rule.",
+  "source": "NEC 210.19(A), 210.20(A), 210.23(A)(1)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "A-S5-51",
+  "severity": "High",
+  "problem": "Keyed answer cites Table 250.66 as the minimum size for the service grounded conductor. Since the 2017 NEC, 250.24(C)(1) points to Table 250.102(C)(1).",
+  "fix": "Choice and explanation now cite Table 250.102(C)(1).",
+  "source": "NEC 2020/2023, 250.24(C)(1), Table 250.102(C)(1)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "A-S4-41",
+  "severity": "High",
+  "problem": "Keyed answer says 'nominal circuit current'; 110.9 requires an interrupting rating at nominal voltage not less than the current available at the line terminals (available fault current), not load current.",
+  "fix": "Choice reworded.",
+  "source": "NEC 110.9",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S2-24",
+  "severity": "Medium",
+  "problem": "'Final step' is debatable: NFPA 70E 2024 120.6 lists a step (8) after testing (temporary protective grounding where induced voltage or stored energy may exist). Reference also used 2021 numbering.",
+  "fix": "Stem now asks for the step after lockout/tagout; reference updated to 120.6.",
+  "source": "NFPA 70E 2024, 120.6(6)–(8)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S5-137",
+  "severity": "Medium",
+  "problem": "Stem merges two different rules: 220.61(B)(1) (70% for ranges, ovens, cooktops, dryers) and 220.61(B)(2) (70% of the unbalanced load over 200 A).",
+  "fix": "Stem limited to 220.61(B)(2).",
+  "source": "NEC 220.61(B)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S6-176",
+  "severity": "Medium",
+  "problem": "Stem uses '120 V and low-voltage signal' — Class 2 signal circuits must be separated from power (725.136); insulation rating alone does not permit them together. Answer only fits 300.3(C)(1) power circuits.",
+  "fix": "Stem limited to power circuits 1000 V or less.",
+  "source": "NEC 300.3(C)(1); 725.136(A)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S7-188",
+  "severity": "Medium",
+  "problem": "Two distractors are the same value (30 A and '30 A exactly').",
+  "fix": "Replaced duplicate distractor with 45 A.",
+  "source": "NEC 422.13",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S5-129",
+  "severity": "Medium",
+  "problem": "Edition-sensitive: correct for 2023 only. The 2020 NEC required at least one island/peninsula receptacle. The exam accepts either edition.",
+  "fix": "Kept (stem names 2023); explanation now flags the 2020 difference.",
+  "source": "NEC 2023 210.52(C)(2); NEC 2020 210.52(C)(2)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S4-69",
+  "severity": "Medium",
+  "problem": "Garbled stem ('the grade of clear working space ... permit at least one entrance').",
+  "fix": "Stem rewritten.",
+  "source": "NEC 110.26(C)(2)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S4-72",
+  "severity": "Medium",
+  "problem": "Stem says 110.14(C) governs 'maximum permitted ambient operating temperature'; it governs which conductor temperature rating/ampacity column may be used.",
+  "fix": "Stem rewritten.",
+  "source": "NEC 110.14(C)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S5-108",
+  "severity": "Medium",
+  "problem": "Stem asks for a 'maximum standard ampere rating' but the choices are rules, not ratings.",
+  "fix": "Stem rewritten.",
+  "source": "NEC 240.4(B)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S5-130",
+  "severity": "Medium",
+  "problem": "Stem contradicts itself ('below 100 amperes' ... answer 100 A).",
+  "fix": "Stem rewritten.",
+  "source": "NEC 240.6(A)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S7-194",
+  "severity": "Medium",
+  "problem": "Stem/choices garbled ('must indicate ... when installed: horizontally only / upside down').",
+  "fix": "Rewritten as a clean 240.81 item.",
+  "source": "NEC 240.81",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "A-S4-37",
+  "severity": "Medium",
+  "problem": "Keyed answer 'Per the specific raceway article' is a non-answer; it teaches nothing and is easy to spot.",
+  "fix": "Rewritten as a navigation item.",
+  "source": "NEC 300.11; 358.30",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "B-S7-84",
+  "severity": "Medium",
+  "problem": "Garbled stem ('appliance with a motor over 1/8 hp combined with other loads') and cites 430.24 for an appliance.",
+  "fix": "Rewritten as a standard 430.24 item.",
+  "source": "NEC 430.24",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S4-97",
+  "severity": "Low",
+  "problem": "Grammar ('An receptacle').",
+  "fix": "Fixed.",
+  "source": "—",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S5-133",
+  "severity": "Low",
+  "problem": "Reference does not support the answer; the 'mark its purpose' rule is 110.22(A).",
+  "fix": "Reference corrected.",
+  "source": "NEC 110.22(A); 230.70(B)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "B-S8-96",
+  "severity": "Low",
+  "problem": "Indoor spas are 680.43; 680.42 is outdoor installations.",
+  "fix": "Reference corrected.",
+  "source": "NEC 680.43",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S7-190",
+  "severity": "Low",
+  "problem": "Start/stop requirement is 430.82(A), not 430.81.",
+  "fix": "Reference corrected.",
+  "source": "NEC 430.82(A)",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "B-S5-61",
+  "severity": "Medium",
+  "problem": "Labeled 'NEC 2023 Table 220.12' — in the 2023 NEC the dwelling 3 VA/ft² unit load moved to 220.41 (Table 220.12 is the 2020 location).",
+  "fix": "Reference shows both editions.",
+  "source": "NFPA 70 A2022 First Draft ballot (220.12 relocation); NEC 2023 220.41",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S2-20",
+  "severity": "Low",
+  "problem": "Electrically safe work condition process is 120.6 in NFPA 70E 2024 (120.5 was 2021).",
+  "fix": "Reference updated.",
+  "source": "NFPA 70E 2024, 120.6",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S2-39",
+  "severity": "Low",
+  "problem": "Same 70E numbering issue.",
+  "fix": "Reference updated.",
+  "source": "NFPA 70E 2024, 120.6",
+  "disposition": "Corrected"
+ },
+ {
+  "id": "P-S4-100",
+  "severity": "Medium",
+  "problem": "Duplicate of P-S4-81 (unused openings, 110.12(A)).",
+  "fix": "",
+  "source": "",
+  "disposition": "Retire from scored practice (keep P-S4-81)."
+ },
+ {
+  "id": "P-S5-141",
+  "severity": "Medium",
+  "problem": "Duplicate of P-S5-103 (12 AWG = 20 A).",
+  "fix": "",
+  "source": "",
+  "disposition": "Retire (keep P-S5-103)."
+ },
+ {
+  "id": "P-S6-178",
+  "severity": "Medium",
+  "problem": "Duplicate of P-S6-143 (40% fill).",
+  "fix": "",
+  "source": "",
+  "disposition": "Retire (keep P-S6-143)."
+ },
+ {
+  "id": "P-S7-203",
+  "severity": "Medium",
+  "problem": "Duplicate of P-S7-179 (motor conductors 125%).",
+  "fix": "",
+  "source": "",
+  "disposition": "Retire (keep P-S7-179)."
+ },
+ {
+  "id": "P-S7-204",
+  "severity": "Medium",
+  "problem": "Duplicate of P-S7-195 (overload from nameplate).",
+  "fix": "",
+  "source": "",
+  "disposition": "Retire (keep P-S7-195)."
+ },
+ {
+  "id": "P-S2-40",
+  "severity": "Medium",
+  "problem": "Duplicate of P-S2-21 (GFCI or AEGCP).",
+  "fix": "",
+  "source": "",
+  "disposition": "Retire (keep P-S2-21)."
+ },
+ {
+  "id": "B-S4-33",
+  "severity": "Medium",
+  "problem": "Same question as practice item P-S4-102 (110.3(B)) — locked exam is not 'unseen'.",
+  "fix": "",
+  "source": "",
+  "disposition": "Replace in Exam B on next content pass."
+ },
+ {
+  "id": "A-S7-80",
+  "severity": "Medium",
+  "problem": "Same question as practice item P-S5-140 (15 or 20 A receptacles on 20 A circuit).",
+  "fix": "",
+  "source": "",
+  "disposition": "Replace in Exam A on next content pass."
+ },
+ {
+  "id": "B-S2-15",
+  "severity": "Low",
+  "problem": "Third version of the GFCI-or-AEGCP question.",
+  "fix": "",
+  "source": "",
+  "disposition": "Replace on next pass."
+ },
+ {
+  "id": "P-S8-221",
+  "severity": "Low",
+  "problem": "Reference 517.30 not confirmed against 2023 numbering for the three branches.",
+  "fix": "",
+  "source": "",
+  "disposition": "Check in a 2023 book; reference not changed yet."
+ },
+ {
+  "id": "B-S1-7",
+  "severity": "Low",
+  "problem": "OSHA 29 CFR 1904 (recordkeeping) is not on the reference list.",
+  "fix": "",
+  "source": "",
+  "disposition": "Keep as general knowledge; lower priority."
+ },
+ {
+  "id": "P-S2-27",
+  "severity": "Low",
+  "problem": "Cites ANSI Z89.1, which is not a permitted reference.",
+  "fix": "",
+  "source": "",
+  "disposition": "Keep; OSHA 1926.100 is the exam-book source."
+ }
+]

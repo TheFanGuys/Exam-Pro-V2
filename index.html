@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Fan Guys Exam Pro</title>
+    <meta name="description" content="Study app for the NASCLA electrical contractor (Master/Unlimited) exam." />
+    <meta name="theme-color" content="#05080f" />
+    <!-- Home Screen (iPhone) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Exam Pro" />
+    <link rel="apple-touch-icon" href="./icon-180.png" />
+    <link rel="icon" type="image/png" href="./icon-192.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <style>html, body, #root { margin: 0; min-height: 100%; background: #05080f; } body { overscroll-behavior-y: none; }</style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Fan Guys Exam Pro needs JavaScript turned on.</noscript>
+    <script type="module" src="./src/main.jsx"></script>
+    <script>
+      // Offline support: cache the app after the first visit so it opens with weak or no signal.
+      if ("serviceWorker" in navigator && location.protocol === "https:") {
+        window.addEventListener("load", function () { navigator.serviceWorker.register("./sw.js").catch(function () {}); });
+      }
+    </script>
+  </body>
+</html>
