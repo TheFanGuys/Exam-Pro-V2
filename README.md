@@ -4,7 +4,7 @@ Study app for the NASCLA Accredited Trade Examination for Electrical Contractors
 
 Version 2. Built from `TheFanGuys/ExamPro` (v1, live at https://exam-pro-theta.vercel.app/) plus the Nov 2026 audit fixes. v1 is unchanged.
 
-Deploy on Vercel: import this repo, framework preset **Vite** (build `npm run build`, output `dist`). No settings or environment variables needed.
+**Live:** https://thefanguys.github.io/Exam-Pro-V2/ — GitHub Pages. `.github/workflows/deploy.yml` builds and publishes automatically on every push to `main` (repo Settings › Pages › Source must be **GitHub Actions**).
 
 ## What changed in the Nov 2026 audit
 - Timed exam no longer scores 0% when the clock runs out; clock uses wall time so a locked phone can't stretch it.
